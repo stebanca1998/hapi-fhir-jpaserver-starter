@@ -36,6 +36,7 @@ import ca.uhn.fhir.rest.server.provider.ResourceProviderFactory;
 import ca.uhn.fhir.rest.server.tenant.UrlBaseTenantIdentificationStrategy;
 import ca.uhn.fhir.validation.IValidatorModule;
 import ca.uhn.fhir.validation.ResultSeverityEnum;
+import ca.uhn.fhir.rest.server.interceptor.consent.ConsentInterceptor;
 import com.google.common.base.Strings;
 import org.hl7.fhir.r4.model.Bundle.BundleType;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -256,6 +257,16 @@ public class BaseJpaRestfulServer extends RestfulServer {
      * so it is a potential security vulnerability. Consider using an AuthorizationInterceptor
      * with this feature.
      */
+
+    PatientAndAdminAuthorizationInterceptor patientAndAdminAuthorizationInterceptor = new PatientAndAdminAuthorizationInterceptor();
+    this.registerInterceptor(patientAndAdminAuthorizationInterceptor);
+
+    /*
+    MyConsentService myConsentService = new MyConsentService();
+    ConsentInterceptor consentInterceptor = new ConsentInterceptor(myConsentService);
+    interceptorService.registerInterceptor(consentInterceptor);*/
+
+
     if (ctx.getVersion().getVersion().isEqualOrNewerThan(FhirVersionEnum.DSTU3)) { // <-- ENABLED RIGHT NOW
       registerProvider(myApplicationContext.getBean(TerminologyUploaderProvider.class));
     }
