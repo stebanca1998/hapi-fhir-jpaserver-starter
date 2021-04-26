@@ -1,0 +1,73 @@
+{
+  "resourceType": "Procedure",
+  "id": "physical-therapy",
+  "meta": {
+    "profile": [
+      "http://example.org/fhir/StructureDefinition/PsiqueProcedure"
+    ]
+  },
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Assessment of passive range of motion for both knees on Sept 27, 2016 due to osteoarthritis</div>"
+  },
+  "status": "completed",
+  "category": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "386053000",
+        "display": "Evaluation procedure (procedure)"
+      }
+    ],
+    "text": "Evaluation"
+  },
+  "code": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "710830005",
+        "display": "Assessment of passive range of motion (procedure)"
+      }
+    ],
+    "text": "Assessment of passive range of motion"
+  },
+  "subject": {
+    "reference": "Patient/4"
+  },
+  "performedDateTime": "2016-09-27",
+  "performer": [
+    {
+      "actor": {
+        "reference": "Practitioner/55"
+      }
+    }
+  ],
+  "location": {
+    "display": "Sawbones Orthopedic Clinic"
+  },
+  "outcome": {
+    "text": "Wada test"
+  },
+  "report": [
+    {
+      "display": "???????????"
+    }
+  ],
+  "reasonCode": [
+    {
+      "text": "assessment of mobility limitations due to osteoarthritis"
+    }
+  ],
+  "bodySite": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "36701003",
+          "display": "Both knees (body structure)"
+        }
+      ],
+      "text": "Both knees"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "resourceType": "Organization",
+  "id": "2.16.840.1.113883.19.5",
+  "meta": {
+    "profile": [
+      "http://example.org/fhir/StructureDefinition/PsiqueOrganization"
+    ]
+  },
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\n      \n      <p>Good Health Clinic</p>\n    \n    </div>"
+  },
+  "identifier": [
+    {
+      "value": "2.16.840.1.113883.19.5"
+    }
+  ],
+  "name": "Hospital Universitario del Valle",
+  "alias": [
+       "HUV"
+  ]
+}

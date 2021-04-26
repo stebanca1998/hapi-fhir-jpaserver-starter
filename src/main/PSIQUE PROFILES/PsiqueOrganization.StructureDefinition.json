@@ -1,0 +1,60 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "273492b1-f9ca-49a0-86a0-d9f8d3815c51",
+  "meta": {
+    "versionId": "1",
+    "lastUpdated": "2021-04-06T17:50:50.29+00:00"
+  },
+  "url": "http://example.org/fhir/StructureDefinition/PsiqueOrganization",
+  "name": "PsiqueOrganization",
+  "status": "draft",
+  "date": "2021-04-06T17:50:49.3632959+00:00",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "v2",
+      "uri": "http://hl7.org/v2",
+      "name": "HL7 v2 Mapping"
+    },
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    },
+    {
+      "identity": "servd",
+      "uri": "http://www.omg.org/spec/ServD/1.0/",
+      "name": "ServD"
+    },
+    {
+      "identity": "w5",
+      "uri": "http://hl7.org/fhir/fivews",
+      "name": "FiveWs Pattern Mapping"
+    }
+  ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "Organization",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Organization",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Organization.identifier",
+        "path": "Organization.identifier",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Organization.name",
+        "path": "Organization.name",
+        "min": 1
+      },
+      {
+        "id": "Organization.alias",
+        "path": "Organization.alias",
+        "min": 1
+      }
+    ]
+  }
+}
