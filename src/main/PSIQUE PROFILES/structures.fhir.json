@@ -1,0 +1,596 @@
+{
+    "resourceType": "Bundle",
+    "type": "transaction",
+    "entry": [
+        {
+            "resource": {
+                "resourceType": "StructureDefinition",
+                "id": "e577f027-72ab-425b-ac98-b9f0f2d1aace",
+                "meta": {
+                  "versionId": "1",
+                  "lastUpdated": "2021-04-06T17:51:06.301+00:00"
+                },
+                "url": "http://example.org/fhir/StructureDefinition/PsiqueCondition",
+                "name": "PsiqueCondition",
+                "status": "draft",
+                "date": "2021-04-06T17:51:05.3774835+00:00",
+                "fhirVersion": "4.0.1",
+                "mapping": [
+                  {
+                    "identity": "workflow",
+                    "uri": "http://hl7.org/fhir/workflow",
+                    "name": "Workflow Pattern"
+                  },
+                  {
+                    "identity": "sct-concept",
+                    "uri": "http://snomed.info/conceptdomain",
+                    "name": "SNOMED CT Concept Domain Binding"
+                  },
+                  {
+                    "identity": "v2",
+                    "uri": "http://hl7.org/v2",
+                    "name": "HL7 v2 Mapping"
+                  },
+                  {
+                    "identity": "rim",
+                    "uri": "http://hl7.org/v3",
+                    "name": "RIM Mapping"
+                  },
+                  {
+                    "identity": "w5",
+                    "uri": "http://hl7.org/fhir/fivews",
+                    "name": "FiveWs Pattern Mapping"
+                  },
+                  {
+                    "identity": "sct-attr",
+                    "uri": "http://snomed.org/attributebinding",
+                    "name": "SNOMED CT Attribute Binding"
+                  }
+                ],
+                "kind": "resource",
+                "abstract": false,
+                "type": "Condition",
+                "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Condition",
+                "derivation": "constraint",
+                "differential": {
+                  "element": [
+                    {
+                      "id": "Condition.code.coding.system",
+                      "path": "Condition.code.coding.system",
+                      "fixedUri": "http://hl7.org/fhir/sid/icd-10"
+                    },
+                    {
+                      "id": "Condition.subject",
+                      "path": "Condition.subject",
+                      "type": [
+                        {
+                          "code": "Reference",
+                          "targetProfile": [
+                            "http://hl7.org/fhir/StructureDefinition/Patient"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+            "request": {
+                "method": "POST",
+                "url": "StructureDefinition"
+            }
+        },
+        {
+            "resource": {
+                "resourceType": "StructureDefinition",
+                "id": "82b6c809-3b6f-43f0-baaf-1b33548a1101",
+                "meta": {
+                  "versionId": "1",
+                  "lastUpdated": "2021-04-06T17:51:39.05+00:00"
+                },
+                "url": "http://example.org/fhir/StructureDefinition/PsiqueMedia",
+                "name": "PsiqueMedia",
+                "status": "draft",
+                "date": "2021-04-06T17:51:38.1232436+00:00",
+                "fhirVersion": "4.0.1",
+                "mapping": [
+                  {
+                    "identity": "workflow",
+                    "uri": "http://hl7.org/fhir/workflow",
+                    "name": "Workflow Pattern"
+                  },
+                  {
+                    "identity": "rim",
+                    "uri": "http://hl7.org/v3",
+                    "name": "RIM Mapping"
+                  },
+                  {
+                    "identity": "w5",
+                    "uri": "http://hl7.org/fhir/fivews",
+                    "name": "FiveWs Pattern Mapping"
+                  },
+                  {
+                    "identity": "dicom",
+                    "uri": "http://nema.org/dicom",
+                    "name": "DICOM Tag Mapping"
+                  },
+                  {
+                    "identity": "v2",
+                    "uri": "http://hl7.org/v2",
+                    "name": "HL7 v2 Mapping"
+                  },
+                  {
+                    "identity": "sct-concept",
+                    "uri": "http://snomed.info/conceptdomain",
+                    "name": "SNOMED CT Concept Domain Binding"
+                  },
+                  {
+                    "identity": "sct-attr",
+                    "uri": "http://snomed.org/attributebinding",
+                    "name": "SNOMED CT Attribute Binding"
+                  }
+                ],
+                "kind": "resource",
+                "abstract": false,
+                "type": "Media",
+                "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Media",
+                "derivation": "constraint",
+                "differential": {
+                  "element": [
+                    {
+                      "id": "Media.partOf",
+                      "path": "Media.partOf",
+                      "min": 1,
+                      "max": "1",
+                      "type": [
+                        {
+                          "code": "Reference",
+                          "targetProfile": [
+                            "http://hl7.org/fhir/StructureDefinition/Resource",
+                            "http://example.org/fhir/StructureDefinition/sResearchStudy"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "id": "Media.subject",
+                      "path": "Media.subject",
+                      "min": 1,
+                      "type": [
+                        {
+                          "code": "Reference",
+                          "targetProfile": [
+                            "http://hl7.org/fhir/StructureDefinition/Patient"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "id": "Media.encounter",
+                      "path": "Media.encounter",
+                      "type": [
+                        {
+                          "code": "Reference",
+                          "targetProfile": [
+                            "http://hl7.org/fhir/StructureDefinition/Encounter",
+                            "http://example.org/fhir/StructureDefinition/Procedure"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+            "request": {
+                "method": "POST",
+                "url": "StructureDefinition"
+            }
+        },
+        {
+            "resource": {
+                "resourceType": "StructureDefinition",
+                "id": "273492b1-f9ca-49a0-86a0-d9f8d3815c51",
+                "meta": {
+                  "versionId": "1",
+                  "lastUpdated": "2021-04-06T17:50:50.29+00:00"
+                },
+                "url": "http://example.org/fhir/StructureDefinition/PsiqueOrganization",
+                "name": "PsiqueOrganization",
+                "status": "draft",
+                "date": "2021-04-06T17:50:49.3632959+00:00",
+                "fhirVersion": "4.0.1",
+                "mapping": [
+                  {
+                    "identity": "v2",
+                    "uri": "http://hl7.org/v2",
+                    "name": "HL7 v2 Mapping"
+                  },
+                  {
+                    "identity": "rim",
+                    "uri": "http://hl7.org/v3",
+                    "name": "RIM Mapping"
+                  },
+                  {
+                    "identity": "servd",
+                    "uri": "http://www.omg.org/spec/ServD/1.0/",
+                    "name": "ServD"
+                  },
+                  {
+                    "identity": "w5",
+                    "uri": "http://hl7.org/fhir/fivews",
+                    "name": "FiveWs Pattern Mapping"
+                  }
+                ],
+                "kind": "resource",
+                "abstract": false,
+                "type": "Organization",
+                "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Organization",
+                "derivation": "constraint",
+                "differential": {
+                  "element": [
+                    {
+                      "id": "Organization.identifier",
+                      "path": "Organization.identifier",
+                      "min": 1,
+                      "max": "1"
+                    },
+                    {
+                      "id": "Organization.name",
+                      "path": "Organization.name",
+                      "min": 1
+                    },
+                    {
+                      "id": "Organization.alias",
+                      "path": "Organization.alias",
+                      "min": 1
+                    }
+                  ]
+                }
+              },
+            "request": {
+                "method": "POST",
+                "url": "StructureDefinition"
+            }
+        },
+        {
+            "resource": {
+                "resourceType": "StructureDefinition",
+                "id": "2e45565b-452c-43c3-b0fa-33e75fd4186c",
+                "meta": {
+                  "versionId": "1",
+                  "lastUpdated": "2021-04-06T17:49:56.823+00:00"
+                },
+                "url": "http://example.org/fhir/StructureDefinition/PsiquePatient",
+                "name": "PsiquePatient",
+                "status": "draft",
+                "date": "2021-04-06T17:49:54.9441205+00:00",
+                "fhirVersion": "4.0.1",
+                "mapping": [
+                  {
+                    "identity": "rim",
+                    "uri": "http://hl7.org/v3",
+                    "name": "RIM Mapping"
+                  },
+                  {
+                    "identity": "cda",
+                    "uri": "http://hl7.org/v3/cda",
+                    "name": "CDA (R2)"
+                  },
+                  {
+                    "identity": "w5",
+                    "uri": "http://hl7.org/fhir/fivews",
+                    "name": "FiveWs Pattern Mapping"
+                  },
+                  {
+                    "identity": "v2",
+                    "uri": "http://hl7.org/v2",
+                    "name": "HL7 v2 Mapping"
+                  },
+                  {
+                    "identity": "loinc",
+                    "uri": "http://loinc.org",
+                    "name": "LOINC code for the element"
+                  }
+                ],
+                "kind": "resource",
+                "abstract": false,
+                "type": "Patient",
+                "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Patient",
+                "derivation": "constraint",
+                "differential": {
+                  "element": [
+                    {
+                      "id": "Patient.identifier",
+                      "path": "Patient.identifier",
+                      "min": 1,
+                      "max": "1"
+                    },
+                    {
+                      "id": "Patient.name",
+                      "path": "Patient.name",
+                      "min": 1,
+                      "max": "1"
+                    },
+                    {
+                      "id": "Patient.gender",
+                      "path": "Patient.gender",
+                      "min": 1
+                    },
+                    {
+                      "id": "Patient.birthDate",
+                      "path": "Patient.birthDate",
+                      "min": 1
+                    },
+                    {
+                      "id": "Patient.address",
+                      "path": "Patient.address",
+                      "min": 1,
+                      "max": "1"
+                    },
+                    {
+                      "id": "Patient.address.city",
+                      "path": "Patient.address.city",
+                      "min": 1
+                    },
+                    {
+                      "id": "Patient.maritalStatus",
+                      "path": "Patient.maritalStatus",
+                      "min": 1
+                    },
+                    {
+                      "id": "Patient.maritalStatus.coding.system",
+                      "path": "Patient.maritalStatus.coding.system",
+                      "fixedUri": "http://loinc.org"
+                    },
+                    {
+                      "id": "Patient.generalPractitioner",
+                      "path": "Patient.generalPractitioner",
+                      "min": 1,
+                      "max": "1",
+                      "type": [
+                        {
+                          "code": "Reference",
+                          "targetProfile": [
+                            "http://hl7.org/fhir/StructureDefinition/Practitioner"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "id": "Patient.generalPractitioner.reference",
+                      "path": "Patient.generalPractitioner.reference",
+                      "min": 1
+                    }
+                  ]
+                }
+              },
+            "request": {
+                "method": "POST",
+                "url": "StructureDefinition"
+            }
+        },
+        {
+            "resource": {
+                "resourceType": "StructureDefinition",
+                "id": "6968444d-af50-443e-ab99-6650603fdff7",
+                "meta": {
+                  "versionId": "1",
+                  "lastUpdated": "2021-04-06T17:50:38.639+00:00"
+                },
+                "url": "http://example.org/fhir/StructureDefinition/PsiquePractitioner",
+                "name": "PsiquePractitioner",
+                "status": "draft",
+                "date": "2021-04-06T17:50:37.6960811+00:00",
+                "fhirVersion": "4.0.1",
+                "mapping": [
+                  {
+                    "identity": "v2",
+                    "uri": "http://hl7.org/v2",
+                    "name": "HL7 v2 Mapping"
+                  },
+                  {
+                    "identity": "rim",
+                    "uri": "http://hl7.org/v3",
+                    "name": "RIM Mapping"
+                  },
+                  {
+                    "identity": "servd",
+                    "uri": "http://www.omg.org/spec/ServD/1.0/",
+                    "name": "ServD"
+                  },
+                  {
+                    "identity": "w5",
+                    "uri": "http://hl7.org/fhir/fivews",
+                    "name": "FiveWs Pattern Mapping"
+                  }
+                ],
+                "kind": "resource",
+                "abstract": false,
+                "type": "Practitioner",
+                "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Practitioner",
+                "derivation": "constraint",
+                "differential": {
+                  "element": [
+                    {
+                      "id": "Practitioner.identifier",
+                      "path": "Practitioner.identifier",
+                      "min": 1,
+                      "max": "2"
+                    },
+                    {
+                      "id": "Practitioner.name",
+                      "path": "Practitioner.name",
+                      "min": 1,
+                      "max": "1"
+                    }
+                  ]
+                }
+              },
+            "request": {
+                "method": "POST",
+                "url": "StructureDefinition"
+            }
+        },
+        {
+            "resource": {
+                "resourceType": "StructureDefinition",
+                "id": "b05ae02a-138c-4eaf-865b-32856f00abeb",
+                "meta": {
+                  "versionId": "1",
+                  "lastUpdated": "2021-04-06T17:52:04.324+00:00"
+                },
+                "url": "http://example.org/fhir/StructureDefinition/PsiqueProcedure",
+                "name": "PsiqueProcedure",
+                "status": "draft",
+                "date": "2021-04-06T17:52:03.212678+00:00",
+                "fhirVersion": "4.0.1",
+                "mapping": [
+                  {
+                    "identity": "workflow",
+                    "uri": "http://hl7.org/fhir/workflow",
+                    "name": "Workflow Pattern"
+                  },
+                  {
+                    "identity": "rim",
+                    "uri": "http://hl7.org/v3",
+                    "name": "RIM Mapping"
+                  },
+                  {
+                    "identity": "w5",
+                    "uri": "http://hl7.org/fhir/fivews",
+                    "name": "FiveWs Pattern Mapping"
+                  },
+                  {
+                    "identity": "v2",
+                    "uri": "http://hl7.org/v2",
+                    "name": "HL7 v2 Mapping"
+                  }
+                ],
+                "kind": "resource",
+                "abstract": false,
+                "type": "Procedure",
+                "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Procedure",
+                "derivation": "constraint",
+                "differential": {
+                  "element": [
+                    {
+                      "id": "Procedure.code",
+                      "path": "Procedure.code",
+                      "min": 1
+                    },
+                    {
+                      "id": "Procedure.code.text",
+                      "path": "Procedure.code.text",
+                      "min": 1
+                    },
+                    {
+                      "id": "Procedure.performer",
+                      "path": "Procedure.performer",
+                      "min": 1,
+                      "max": "1"
+                    },
+                    {
+                      "id": "Procedure.performer.actor",
+                      "path": "Procedure.performer.actor",
+                      "type": [
+                        {
+                          "code": "Reference",
+                          "targetProfile": [
+                            "http://hl7.org/fhir/StructureDefinition/Practitioner"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "id": "Procedure.outcome",
+                      "path": "Procedure.outcome",
+                      "min": 1
+                    },
+                    {
+                      "id": "Procedure.report",
+                      "path": "Procedure.report",
+                      "min": 1,
+                      "max": "1"
+                    }
+                  ]
+                }
+              },
+            "request": {
+                "method": "POST",
+                "url": "StructureDefinition"
+            }
+        },
+        {
+            "resource": {
+                "resourceType": "StructureDefinition",
+                "id": "f4c1b6ca-8e7c-4c25-96ac-d53491924dd2",
+                "meta": {
+                  "versionId": "1",
+                  "lastUpdated": "2021-04-06T17:51:20.625+00:00"
+                },
+                "url": "http://example.org/fhir/StructureDefinition/PsiqueResearchStudy",
+                "name": "PsiqueResearchStudy",
+                "status": "draft",
+                "date": "2021-04-06T17:51:19.655843+00:00",
+                "fhirVersion": "4.0.1",
+                "mapping": [
+                  {
+                    "identity": "BRIDG5.1",
+                    "uri": "https://bridgmodel.nci.nih.gov",
+                    "name": "BRIDG 5.1 Mapping"
+                  },
+                  {
+                    "identity": "v2",
+                    "uri": "http://hl7.org/v2",
+                    "name": "HL7 v2 Mapping"
+                  },
+                  {
+                    "identity": "rim",
+                    "uri": "http://hl7.org/v3",
+                    "name": "RIM Mapping"
+                  },
+                  {
+                    "identity": "clinicaltrials-gov",
+                    "uri": "http://clinicaltrials.gov",
+                    "name": "ClinicalTrials.gov Mapping"
+                  },
+                  {
+                    "identity": "w5",
+                    "uri": "http://hl7.org/fhir/fivews",
+                    "name": "FiveWs Pattern Mapping"
+                  }
+                ],
+                "kind": "resource",
+                "abstract": false,
+                "type": "ResearchStudy",
+                "baseDefinition": "http://hl7.org/fhir/StructureDefinition/ResearchStudy",
+                "derivation": "constraint",
+                "differential": {
+                  "element": [
+                    {
+                      "id": "ResearchStudy.condition.coding.system",
+                      "path": "ResearchStudy.condition.coding.system",
+                      "fixedUri": "http://hl7.org/fhir/sid/icd-10"
+                    },
+                    {
+                      "id": "ResearchStudy.principalInvestigator",
+                      "path": "ResearchStudy.principalInvestigator",
+                      "min": 1,
+                      "type": [
+                        {
+                          "code": "Reference",
+                          "targetProfile": [
+                            "http://hl7.org/fhir/StructureDefinition/Practitioner"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+            "request": {
+                "method": "POST",
+                "url": "StructureDefinition"
+            }
+        }
+    ]
+}
