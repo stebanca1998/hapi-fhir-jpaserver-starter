@@ -45,6 +45,39 @@
   "differential": {
     "element": [
       {
+        "id": "ResearchStudy.extension",
+        "path": "ResearchStudy.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "rules": "open"
+        }
+      },
+      {
+        "id": "ResearchStudy.extension:myExtension",
+        "path": "ResearchStudy.extension",
+        "sliceName": "myExtension",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://example.org/fhir/StructureDefinition/Contributors"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "ResearchStudy.title",
+        "path": "ResearchStudy.title",
+        "min": 1
+      },
+      {
         "id": "ResearchStudy.condition.coding.system",
         "path": "ResearchStudy.condition.coding.system",
         "fixedUri": "http://hl7.org/fhir/sid/icd-10"
