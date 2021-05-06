@@ -1,14 +1,26 @@
 {
   "resourceType": "ResearchStudy",
-  "id": "example",
   "meta": {
     "profile": [
       "http://example.org/fhir/StructureDefinition/PsiqueResearchStudy"
     ]
   },
-  "text": {
-    "status": "generated",
-    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">[Put rendering here]</div>"
-  },
-  "status": "completed"
+  "status": "completed",
+  "title": "PSIQUE ESTUDIO",
+  "location": "Cali",
+  "extension":[
+      {
+          "url": "http://example.org/fhir/StructureDefinition/Contributors",
+          "valueReference": {
+            "reference": "Organization/5"
+            }
+      },
+      {
+          "url": "http://example.org/fhir/StructureDefinition/Contributors",
+          "valueReference": {
+            "reference": "Organization/2"
+            }
+      }
+      
+  ]
 }

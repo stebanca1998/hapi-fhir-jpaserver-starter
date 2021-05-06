@@ -1,0 +1,27 @@
+{
+    "resourceType": "Communication",
+    "about": [
+      {
+        "reference": "Patient/11"
+      }
+    ],
+    "sent": "2016-06-12T18:01:10-08:00",
+    "recipient": [
+      {
+        "reference": "Practitioner/10"
+      }
+    ],
+    "sender": {
+      "reference": "Practitioner/1552"
+    },
+    "payload": [
+      {
+        "contentAttachment": {
+          "contentType": "application/pdf",
+          "data": "SGVsbG8=",
+          "title": "accident notes 20100201.pdf",
+          "creation": "2010-02-01T11:50:23-05:00"
+        }
+      }
+    ]
+  }

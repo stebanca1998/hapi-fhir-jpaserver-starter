@@ -258,8 +258,9 @@ public class BaseJpaRestfulServer extends RestfulServer {
      * with this feature.
      */
 
+    /*
     PatientAndAdminAuthorizationInterceptor patientAndAdminAuthorizationInterceptor = new PatientAndAdminAuthorizationInterceptor();
-    this.registerInterceptor(patientAndAdminAuthorizationInterceptor);
+    this.registerInterceptor(patientAndAdminAuthorizationInterceptor);*/
 
     /*
     MyConsentService myConsentService = new MyConsentService();
